@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <h1 class="text-center">Página Principal</h1>
+    <hr>
+    <div class="container">
+        <h2 class="">Perguntas cadastradas</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <th>Titulo</th>
+                <th>Descricao</th>
+                <th>Interagir</th>
+            </thead>
+            <tbody>
+                <% perguntas.forEach(pergunta => { %>
+                    <tr>
+                        <td><%= pergunta.titulo %></td>
+                        <td><%= pergunta.descricao %></td>
+                        <td>
+                            <a href="/pergunta/<%= pergunta.id %>" class="btn btn-success">Responder</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>
